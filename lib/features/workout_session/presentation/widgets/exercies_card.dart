@@ -44,29 +44,32 @@ class ExerciseCard extends StatelessWidget {
                 children: [
                   exercise.videoUrl == null
                       ? AspectRatio(
-                          aspectRatio: 16 / 9,
-                          child: Image.network(
-                            exercise.coverImage,
-                            fit: BoxFit.cover,
-                            loadingBuilder: (ctx, child, progress) {
-                              if (progress == null) return child;
-                              return Container(
-                                alignment: Alignment.center,
-                                child: CircularProgressIndicator(),
-                              );
-                            },
-                            errorBuilder: (_, __, ___) => Container(
-                              color: cs.surfaceVariant,
+                        aspectRatio: 16 / 9,
+                        child: Image.network(
+                          exercise.coverImage,
+                          fit: BoxFit.cover,
+                          loadingBuilder: (ctx, child, progress) {
+                            if (progress == null) return child;
+                            return Container(
                               alignment: Alignment.center,
-                              child: Icon(Icons.broken_image_outlined,
-                                  size: 32.sp),
-                            ),
-                          ),
-                        )
-                      : ExerciseVideoPlayer(
-                          videoUrl: exercise.videoUrl!,
-                          title: exercise.name,
+                              child: CircularProgressIndicator(),
+                            );
+                          },
+                          errorBuilder:
+                              (_, __, ___) => Container(
+                                color: cs.surfaceVariant,
+                                alignment: Alignment.center,
+                                child: Icon(
+                                  Icons.broken_image_outlined,
+                                  size: 32.sp,
+                                ),
+                              ),
                         ),
+                      )
+                      : ExerciseVideoPlayer(
+                        videoUrl: exercise.videoUrl!,
+                        title: exercise.name,
+                      ),
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: _FrostedChip(
@@ -82,10 +85,7 @@ class ExerciseCard extends StatelessWidget {
           SizedBox(height: 16.h),
 
           // الاسم والوصف
-          Text(
-            exercise.name,
-            style: AppText.s20W600,
-          ),
+          Text(exercise.name, style: AppText.s20W600),
           SizedBox(height: 6.h),
           Text(
             exercise.description,
@@ -113,16 +113,23 @@ class ExerciseCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.fitness_center_outlined,
-                        size: 18.sp, color: cs.primary),
+                    Icon(
+                      Icons.fitness_center_outlined,
+                      size: 18.sp,
+                      color: cs.primary,
+                    ),
                     SizedBox(width: 6.w),
-                    Text('${LocaleKeys.sets.tr()}: ${exercise.sets}',
-                        style: AppText.s13w600),
+                    Text(
+                      '${LocaleKeys.sets.tr()}: ${exercise.sets}',
+                      style: AppText.s13w600,
+                    ),
                     SizedBox(width: 12.w),
                     Icon(Icons.repeat, size: 18.sp, color: cs.primary),
                     SizedBox(width: 6.w),
-                    Text('${LocaleKeys.repetitions.tr()}: ${exercise.reps}',
-                        style: AppText.s13w600),
+                    Text(
+                      '${LocaleKeys.repetitions.tr()}: ${exercise.reps}',
+                      style: AppText.s13w600,
+                    ),
                   ],
                 ),
                 SizedBox(height: 12.h),
@@ -147,16 +154,18 @@ class ExerciseCard extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 elevation: 0,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.r)),
+                  borderRadius: BorderRadius.circular(16.r),
+                ),
               ),
               onPressed: onStartPressed, // بدون منطق
               icon: Icon(Icons.play_circle_outline),
               label: Text(
-                  isRunning ? LocaleKeys.stop.tr() : LocaleKeys.start.tr(),
-                  style: AppText.s15w600),
+                isRunning ? LocaleKeys.stop.tr() : LocaleKeys.start.tr(),
+                style: AppText.s15w600,
+              ),
             ),
           ),
-
+          //"nothing"
           SizedBox(height: 20.h),
         ],
       ),
