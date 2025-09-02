@@ -1,4 +1,4 @@
-# sleman_store_app
+# gym_app
 
 A complete e-commerce implementation using FakeStoreAPI as the backend, demonstrating real app architecture with mock data.
 
