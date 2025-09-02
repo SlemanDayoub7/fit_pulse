@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sleman_store_app/core/theming/text_styles.dart';
+import 'package:gym_app/core/theming/text_styles.dart';
 
 class CustomText extends StatelessWidget {
   final String text;

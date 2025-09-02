@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:gym_app/core/constants/shared_pref_keys.dart';
+import 'package:gym_app/core/helpers/shared_pref_helper.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
@@ -24,16 +26,18 @@ class DioFactory {
   }
 
   static void addDioHeaders() async {
-    // dio?.options.headers = {
-    //   'Accept': 'application/json',
-    //   'Authorization':
-    //       'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
-    // };
+    var t = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+    if (t != "")
+      dio?.options.headers = {
+        'Accept': 'application/json',
+        'Authorization':
+            'JWT ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+      };
   }
 
   static void setTokenIntoHeaderAfterLogin(String token) {
     dio?.options.headers = {
-      'Authorization': 'Bearer $token',
+      'Authorization': 'JWT $token',
     };
   }
 

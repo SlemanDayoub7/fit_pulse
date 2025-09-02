@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sleman_store_app/core/networking/api_error_handler.dart';
+import 'package:gym_app/core/networking/api_error_handler.dart';
+
 part 'api_result.freezed.dart';
 // part 'api_result.g.dart';
 

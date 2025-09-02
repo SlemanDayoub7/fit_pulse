@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+<uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="sleman_store_app"
+        android:label="gym_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

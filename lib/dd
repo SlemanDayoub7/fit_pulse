@@ -1,0 +1,15 @@
+do{
+    waiting[i]=true;
+    key=true;
+    while(waiting[i]&&key)
+        key=TestAndSet(&lock);
+    waiting[i]=false;
+    j=(i+1)%n;
+    while((j!=i)&&!waiting[j])
+         j=(i+1)%n;
+    if(j==i)
+        lock=false;
+    else
+        waiting[j]=false;
+
+}while(true);

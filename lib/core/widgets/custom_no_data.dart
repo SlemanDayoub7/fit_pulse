@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sleman_store_app/core/helpers/spacing.dart';
-import 'package:sleman_store_app/core/localization/generated/codegen_loader.g.dart';
-import 'package:sleman_store_app/core/theming/text_styles.dart';
-import 'package:sleman_store_app/core/widgets/custom_text.dart';
+import 'package:gym_app/core/helpers/spacing.dart';
+import 'package:gym_app/core/localization/generated/codegen_loader.g.dart';
+import 'package:gym_app/core/theming/text_styles.dart';
+import 'package:gym_app/core/widgets/custom_text.dart';
 
 class CustomNoData extends StatelessWidget {
   final String? title;

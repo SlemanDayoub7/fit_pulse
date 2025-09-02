@@ -1,10 +1,13 @@
 class ApiConstants {
-  static const String apiBaseUrl = "https://fakestoreapi.com";
-  static const String login = "/auth/login";
-  static const String products = "/products";
-  //I put 1 just for testing , because of there is no api to get user id
-  static const String profile = "/users/1";
-  static const String categories = "/products/categories";
+  static const String apiBaseUrl = "https://ahmadshamma.pythonanywhere.com";
+  static const String login = "/auth/login/";
+  // "email": "so@gmail.com",
+  // "password": "Abcd1234@"
+  static const String signup = "/auth/signup/";
+  static const String profile = "/auth/profile/";
+  static const String sports = '/api/programs/sport/';
+  static const String plans = '/api/programs/plans/';
+  static const String nutritionPlans = '/api/programs/nutrition-plan/';
 }
 
 class ApiErrors {

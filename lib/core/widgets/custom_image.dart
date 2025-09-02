@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sleman_store_app/core/theming/base_shimmer.dart';
-import 'package:sleman_store_app/core/theming/colors.dart';
+import 'package:gym_app/core/theming/base_shimmer.dart';
+import 'package:gym_app/core/theming/colors.dart';
 
 class CustomImage extends StatelessWidget {
   final String imageUrl;

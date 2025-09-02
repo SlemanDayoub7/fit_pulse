@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:sleman_store_app/core/theming/colors.dart';
+import 'package:gym_app/core/theming/colors.dart';
 
 class BaseShimmer extends StatelessWidget {
   final Widget widget;

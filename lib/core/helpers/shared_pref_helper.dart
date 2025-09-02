@@ -1,12 +1,12 @@
+import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-
-import 'package:sleman_store_app/core/constants/shared_pref_keys.dart';
+import 'package:gym_app/core/constants/shared_pref_keys.dart';
 
 class SharedPrefHelper {
-  // private constructor as I don't want to allow creating an instance of this class itself.
   SharedPrefHelper._();
 
   /// Removes a value from SharedPreferences with given [key].
@@ -122,5 +122,42 @@ class SharedPrefHelper {
       return localeCode;
     }
     return 'en';
+  }
+
+  static Future<void> setProfileComplete(bool complete) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(SharedPrefKeys.profileCompleteKey, complete);
+  }
+
+  static Future<bool> isProfileComplete() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(SharedPrefKeys.profileCompleteKey) ?? false;
+  }
+
+  static Future<void> saveUserProfileImage(File imageFile) async {
+    final bytes = await imageFile.readAsBytes();
+    final base64String = base64Encode(bytes);
+    await setData(SharedPrefKeys.userProfileImageKey, base64String);
+    debugPrint("Saved user profile image as base64 string.");
+  }
+
+  /// Retrieves the user profile image as bytes from SharedPreferences
+  static Future<Uint8List?> getUserProfileImage() async {
+    final base64String = await getString(SharedPrefKeys.userProfileImageKey);
+    if (base64String.isEmpty) {
+      return null; // No image saved
+    }
+    try {
+      final bytes = base64Decode(base64String);
+      return bytes;
+    } catch (e) {
+      debugPrint("Error decoding base64 image: $e");
+      return null;
+    }
+  }
+
+  static Future<void> clearUserProfileImage() async {
+    await removeData(SharedPrefKeys.userProfileImageKey);
+    debugPrint("Cleared user profile image.");
   }
 }

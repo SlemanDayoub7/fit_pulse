@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sleman_store_app/core/theming/colors.dart';
-import 'package:sleman_store_app/core/theming/text_styles.dart';
-import 'package:sleman_store_app/core/widgets/custom_text.dart';
+import 'package:gym_app/core/theming/colors.dart';
+import 'package:gym_app/core/theming/text_styles.dart';
+import 'package:gym_app/core/widgets/custom_text.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback? onPressed;

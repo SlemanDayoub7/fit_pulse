@@ -2,13 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sleman_store_app/core/constants/asset_paths.dart';
-import 'package:sleman_store_app/core/helpers/extensions.dart';
-import 'package:sleman_store_app/core/routing/routes.dart';
-import 'package:sleman_store_app/core/theming/text_styles.dart';
-import 'package:sleman_store_app/core/widgets/custom_button.dart';
-import 'package:sleman_store_app/core/widgets/custom_text.dart';
-import 'package:sleman_store_app/core/localization/generated/codegen_loader.g.dart';
+import 'package:gym_app/core/constants/asset_paths.dart';
+import 'package:gym_app/core/helpers/extensions.dart';
+import 'package:gym_app/core/routing/routes.dart';
+import 'package:gym_app/core/theming/text_styles.dart';
+import 'package:gym_app/core/widgets/custom_button.dart';
+import 'package:gym_app/core/widgets/custom_text.dart';
+import 'package:gym_app/core/localization/generated/codegen_loader.g.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
